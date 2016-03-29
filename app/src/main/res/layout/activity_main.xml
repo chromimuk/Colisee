@@ -1,21 +1,39 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_blue_darker"
-    android:orientation="vertical"
-    tools:context="fr.marconnet.colisee.activities.MainActivity">
+    android:id="@+id/coordinator_layout"
+    android:fitsSystemWindows="true">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:contentDescription="@string/defaultImageDescription"
-        android:src="@drawable/logotest" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:background="@color/app_blue_darker"
+        android:orientation="vertical"
+        tools:context="fr.marconnet.colisee.activities.MainActivity">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:contentDescription="@string/defaultImageDescription"
+            android:src="@drawable/logo" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:indeterminateTint="#FFF"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="invisible" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

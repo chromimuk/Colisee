@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight=".4"
-        android:background="@color/app_blue_darker"
+        android:background="@color/app_blue"
         android:contentDescription="@string/descriptionAffiche"
         android:elevation="8dp"
         android:scaleType="fitXY"
