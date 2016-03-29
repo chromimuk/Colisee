@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <dimen name="small">4dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="large">16dp</dimen>
+
+    <dimen name="screen_margin">16dp</dimen>
+
+    <dimen name="cardview_height">176dp</dimen>
+    <dimen name="cardview_margin">8dp</dimen>
+    <dimen name="cardview_padding">8dp</dimen>
+    <dimen name="cardview_radius">2dp</dimen>
+
+
+</resources>

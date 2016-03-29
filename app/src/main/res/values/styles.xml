@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme">
+
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">#1C344C</item>
+        <item name="colorPrimaryDark">#0D2237</item>
+        <item name="colorAccent">#EA2E49</item>
+    </style>
+
+    <style name="FilmActivityTheme" parent="@style/Theme.AppCompat.NoActionBar">
+    </style>
+
+
+</resources>

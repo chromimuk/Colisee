@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/app_blue</item>
+        <item name="colorPrimaryDark">@color/app_blue_darker</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+
+    </style>
+
+    <style name="FilmActivityTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">#1C344C</item>
+    </style>
+
+
+</resources>
