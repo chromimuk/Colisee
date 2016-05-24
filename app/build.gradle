@@ -5,14 +5,19 @@ android {
     buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "fr.marconnet.colisee"
-        minSdkVersion 14
         targetSdkVersion 23
-        versionCode 1
+    }
+    signingConfigs {
+        release {
+            storeFile file("my-release-key.keystore")
+            keyAlias "MyAndroidKey"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
         }
     }
     productFlavors {
@@ -28,5 +33,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'org.jsoup:jsoup:1.8.3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile files('libs/fr.marconnet.allocine-parseur-24032016.jar')
+    compile files('libs/fr.marconnet.allocine-parseur-24052016.jar')
 }

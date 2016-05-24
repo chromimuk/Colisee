@@ -1,10 +1,10 @@
 package fr.marconnet.colisee.tools;
 
-import android.util.Log;
-
+import android.content.res.Resources;
 import java.util.List;
 
 import fr.marconnet.acp.models.Seance;
+import fr.marconnet.colisee.R;
 
 
 public class FormattingTools {

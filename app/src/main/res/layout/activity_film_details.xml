@@ -57,6 +57,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <LinearLayout
+        android:id="@+id/notesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/large"

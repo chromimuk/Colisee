@@ -7,6 +7,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 
 import fr.marconnet.acp.models.Film;
@@ -64,9 +66,6 @@ public class FilmActivity extends AppCompatActivity {
     }
 
     private void setViewsContent(Film film) {
-
-        setAffiche(film.getImageURL());
-
         TextView titre = (TextView) findViewById(R.id.titre);
         TextView soustitre = (TextView) findViewById(R.id.soustitre);
         TextView realisateurs = (TextView) findViewById(R.id.realisateurs);
@@ -84,8 +83,17 @@ public class FilmActivity extends AppCompatActivity {
         synopsis.setText(film.getSynopsis());
         seances.setText(FormattingTools.formatSeancesDetail(film.getSeances()));
 
-        notePresse.setRating(film.getNotePresse());
-        noteSpectateurs.setRating(film.getNoteSpectateurs());
+
+        if (film.getNotePresse() > -1 && film.getNoteSpectateurs() > -1) {
+            notePresse.setRating(film.getNotePresse());
+            noteSpectateurs.setRating(film.getNoteSpectateurs());
+        }
+        else {
+            findViewById(R.id.notes).setVisibility(View.GONE);
+            findViewById(R.id.notesLayout).setVisibility(View.GONE);
+        }
+
+        setAffiche(film.getImageURL());
     }
 
 
@@ -94,7 +102,7 @@ public class FilmActivity extends AppCompatActivity {
         afficheURL = url;
         DrawableTypeRequest<String> drawableTypeRequest = Glide.with(this).load(url);
         if (estPortrait()) {
-            drawableTypeRequest.placeholder(R.color.app_blue).override(720, 720).centerCrop().into(affiche);
+            drawableTypeRequest.placeholder(R.color.app_blue).diskCacheStrategy(DiskCacheStrategy.SOURCE).override(720, 720).centerCrop().into(affiche);
         } else {
             drawableTypeRequest.placeholder(R.color.app_blue).into(affiche);
         }
