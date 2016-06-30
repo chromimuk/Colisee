@@ -5,20 +5,22 @@
     <string name="title_activity_film">FilmActivity</string>
 
     <string name="defaultImageDescription">Poster</string>
-    <string name="defaultTitre">Titre</string>
-    <string name="defaultSousTitre">Sous-Titre</string>
-    <string name="defaultRealisateurs">Réalisateurs</string>
-    <string name="defaultActeurs">Acteurs</string>
+    <string name="defaultTitle">Titre</string>
+    <string name="defaultSubtitle">Sous-Titre</string>
+    <string name="defaultDirectors">Réalisateurs</string>
+    <string name="defaultActors">Acteurs</string>
     <string name="defaultSynopsis">Synopsis</string>
-    <string name="defaultSeances">Pas de séances aujourd\'hui</string>
-    <string name="defaultNotes">Notes</string>
+    <string name="defaultShowings">Pas de séances aujourd\'hui</string>
+    <string name="defaultRatings">Notes</string>
 
-    <string name="prochaineSeance">Prochaine séance</string>
-    <string name="prochainesSeances">Prochaines séances</string>
-    <string name="presse">Presse</string>
-    <string name="spectateurs">Spectateurs</string>
+    <string name="nextShowing">Prochaine séance</string>
+    <string name="nextShowings">Prochaines séances</string>
+    <string name="journalists">Presse</string>
+    <string name="viewers">Spectateurs</string>
 
-    <string name="descriptionAffiche">Affiche</string>
+    <string name="descriptionCover">Poster</string>
 
+    <string name="noInternet">Pas de connexion Internet</string>
+    <string name="retry">REESSAYER</string>
 
 </resources>

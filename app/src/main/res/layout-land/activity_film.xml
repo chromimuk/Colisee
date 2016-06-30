@@ -6,19 +6,19 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/affiche"
+        android:id="@+id/cover"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight=".4"
         android:background="@color/app_blue"
-        android:contentDescription="@string/descriptionAffiche"
+        android:contentDescription="@string/descriptionCover"
         android:elevation="8dp"
         android:scaleType="fitXY"
-        android:transitionName="affiche"
+        android:transitionName="cover"
         tools:ignore="UnusedAttribute" />
 
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nested"
+        android:id="@+id/nestedScrollView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="fill_vertical"

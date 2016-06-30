@@ -19,14 +19,14 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/affiche"
+                android:id="@+id/cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/app_blue"
-                android:contentDescription="@string/descriptionAffiche"
+                android:contentDescription="@string/descriptionCover"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
-                android:transitionName="affiche"
+                android:transitionName="cover"
                 app:layout_collapseMode="pin" />
 
             <android.support.v7.widget.Toolbar
@@ -41,7 +41,7 @@
 
 
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nested"
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="fill_vertical"

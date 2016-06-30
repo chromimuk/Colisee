@@ -19,8 +19,8 @@
             android:layout_height="fill_parent">
 
             <ImageView
-                android:transitionName="affiche"
-                android:id="@+id/image"
+                android:transitionName="cover"
+                android:id="@+id/cover"
                 android:layout_width="108dp"
                 android:layout_height="160dp"
                 android:layout_marginRight="@dimen/cardview_margin"
@@ -30,57 +30,57 @@
                 android:scaleType="fitXY" />
 
             <TextView
-                android:id="@+id/titre"
+                android:id="@+id/title"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="@dimen/cardview_margin"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:layout_toEndOf="@id/image"
-                android:layout_toRightOf="@id/image"
-                android:text="@string/defaultTitre"
+                android:layout_toEndOf="@id/cover"
+                android:layout_toRightOf="@id/cover"
+                android:text="@string/defaultTitle"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView
-                android:id="@+id/realisateurs"
+                android:id="@+id/directors"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/titre"
-                android:layout_toEndOf="@id/image"
-                android:layout_toRightOf="@id/image"
-                android:text="@string/defaultRealisateurs"
+                android:layout_below="@+id/title"
+                android:layout_toEndOf="@id/cover"
+                android:layout_toRightOf="@id/cover"
+                android:text="@string/defaultDirectors"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
             <TextView
-                android:id="@+id/soustitre"
+                android:id="@+id/subtitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/realisateurs"
-                android:layout_toEndOf="@id/image"
-                android:layout_toRightOf="@id/image"
-                android:text="@string/defaultSousTitre"
+                android:layout_below="@+id/directors"
+                android:layout_toEndOf="@id/cover"
+                android:layout_toRightOf="@id/cover"
+                android:text="@string/defaultSubtitle"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/image"
-                android:layout_toEndOf="@id/image"
-                android:layout_toRightOf="@id/image"
+                android:layout_alignBottom="@+id/cover"
+                android:layout_toEndOf="@id/cover"
+                android:layout_toRightOf="@id/cover"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/prochaineSeance"
+                    android:id="@+id/nextShowings"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/prochaineSeance"
+                    android:text="@string/nextShowing"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                 <TextView
-                    android:id="@+id/seances"
+                    android:id="@+id/showings"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/defaultSeances"
+                    android:text="@string/defaultShowings"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             </LinearLayout>

@@ -18,29 +18,29 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 
-import fr.marconnet.acp.models.Film;
+import fr.marconnet.acp.models.Movie;
 
 import fr.marconnet.colisee.R;
-import fr.marconnet.colisee.tools.FilmSerializer;
+import fr.marconnet.colisee.tools.MovieSerializer;
 import fr.marconnet.colisee.tools.FormattingTools;
 
 public class FilmActivity extends AppCompatActivity {
 
-    public final static String INTENT_TRANSITION_ELEMENT = "affiche";
-    public final static String EXTRA_FILM = "extra_film";
+    public final static String INTENT_TRANSITION_ELEMENT = "cover";
+    public final static String EXTRA_MOVIE = "extra_movie";
 
-    private String afficheURL;
-    private ImageView affiche;
+    private String coverURL;
+    private ImageView cover;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film);
 
-        String sFilm = (String) getIntent().getExtras().get(EXTRA_FILM);
-        Film film = FilmSerializer.deserialize(sFilm);
+        String sMovie = (String) getIntent().getExtras().get(EXTRA_MOVIE);
+        Movie movie = MovieSerializer.deserialize(sMovie);
 
-        if (estPortrait()) {
+        if (isPortrait()) {
             final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
@@ -55,60 +55,61 @@ public class FilmActivity extends AppCompatActivity {
             }
         }
 
-        setViewsContent(film);
+        setViewsContent(movie);
     }
 
 
     @Override
     public void onBackPressed() {
-        Glide.with(this).load(afficheURL).into(affiche);
+        Glide.with(this).load(coverURL).into(cover);
         super.onBackPressed();
     }
 
-    private void setViewsContent(Film film) {
-        TextView titre = (TextView) findViewById(R.id.titre);
-        TextView soustitre = (TextView) findViewById(R.id.soustitre);
-        TextView realisateurs = (TextView) findViewById(R.id.realisateurs);
-        TextView acteurs = (TextView) findViewById(R.id.acteurs);
+    private void setViewsContent(Movie movie) {
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView subtitle = (TextView) findViewById(R.id.subtitle);
+        TextView directors = (TextView) findViewById(R.id.directors);
+        TextView actors = (TextView) findViewById(R.id.actors);
         TextView synopsis = (TextView) findViewById(R.id.synopsis);
-        TextView seances = (TextView) findViewById(R.id.seances);
+        TextView showings = (TextView) findViewById(R.id.showings);
 
-        RatingBar notePresse = (RatingBar) findViewById(R.id.notePresse);
-        RatingBar noteSpectateurs = (RatingBar) findViewById(R.id.noteSpectateurs);
+        RatingBar ratingsJournalists = (RatingBar) findViewById(R.id.ratingsJournalists);
+        RatingBar ratingViewers = (RatingBar) findViewById(R.id.ratingViewers);
 
-        titre.setText(film.getTitre());
-        soustitre.setText(film.getDuree());
-        realisateurs.setText(FormattingTools.formatRealisateurs(film.getRealisateurs()));
-        acteurs.setText(FormattingTools.formatActeurs(film.getActeurs()));
-        synopsis.setText(film.getSynopsis());
-        seances.setText(FormattingTools.formatSeancesDetail(film.getSeances()));
+        title.setText(movie.getTitle());
+        subtitle.setText(movie.getDuration());
+        directors.setText(FormattingTools.formatDirectors(movie.getRealisateurs()));
+        actors.setText(FormattingTools.formatActeurs(movie.getActeurs()));
+        synopsis.setText(movie.getSynopsis());
+        showings.setText(FormattingTools.formatShowingDetails(movie.getShowings()));
 
 
-        if (film.getNotePresse() > -1 && film.getNoteSpectateurs() > -1) {
-            notePresse.setRating(film.getNotePresse());
-            noteSpectateurs.setRating(film.getNoteSpectateurs());
+        if (movie.getRatingJournalists() > -1 && movie.getRatingViewers() > -1) {
+            ratingsJournalists.setRating(movie.getRatingJournalists());
+            ratingViewers.setRating(movie.getRatingViewers());
         }
         else {
-            findViewById(R.id.notes).setVisibility(View.GONE);
-            findViewById(R.id.notesLayout).setVisibility(View.GONE);
+            findViewById(R.id.ratings).setVisibility(View.GONE);
+            findViewById(R.id.ratingsLayout).setVisibility(View.GONE);
         }
 
-        setAffiche(film.getImageURL());
+        setCover(movie.getCoverURL());
     }
 
 
-    private void setAffiche(String url) {
-        affiche = (ImageView) findViewById(R.id.affiche);
-        afficheURL = url;
+    private void setCover(String url) {
+        cover = (ImageView) findViewById(R.id.cover);
+        coverURL = url;
         DrawableTypeRequest<String> drawableTypeRequest = Glide.with(this).load(url);
-        if (estPortrait()) {
-            drawableTypeRequest.placeholder(R.color.app_blue).diskCacheStrategy(DiskCacheStrategy.SOURCE).override(720, 720).centerCrop().into(affiche);
+
+        if (isPortrait()) {
+            drawableTypeRequest.diskCacheStrategy(DiskCacheStrategy.SOURCE).override(720, 720).centerCrop().into(cover);
         } else {
-            drawableTypeRequest.placeholder(R.color.app_blue).into(affiche);
+            drawableTypeRequest.placeholder(R.color.app_blue).into(cover);
         }
     }
 
-    private boolean estPortrait() {
+    private boolean isPortrait() {
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
     }
 

@@ -11,33 +11,33 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/titre"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/defaultTitre"
+        android:text="@string/defaultTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <TextView
-        android:id="@+id/soustitre"
+        android:id="@+id/subtitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium"
-        android:text="@string/defaultSousTitre"
+        android:text="@string/defaultSubtitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
     <TextView
-        android:id="@+id/realisateurs"
+        android:id="@+id/directors"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/defaultRealisateurs"
+        android:text="@string/defaultDirectors"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/acteurs"
+        android:id="@+id/actors"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium"
-        android:text="@string/defaultActeurs"
+        android:text="@string/defaultActors"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
@@ -49,15 +49,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
-        android:id="@+id/notes"
+        android:id="@+id/ratings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/small"
-        android:text="@string/defaultNotes"
+        android:text="@string/defaultRatings"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <LinearLayout
-        android:id="@+id/notesLayout"
+        android:id="@+id/ratingsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/large"
@@ -68,11 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
-            android:text="@string/presse"
+            android:text="@string/journalists"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <RatingBar
-            android:id="@+id/notePresse"
+            android:id="@+id/ratingsJournalists"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,11 +88,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
-            android:text="@string/spectateurs"
+            android:text="@string/viewers"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <RatingBar
-            android:id="@+id/noteSpectateurs"
+            android:id="@+id/ratingViewers"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,19 +104,19 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/prochainesSeances"
+        android:id="@+id/nextShowings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/small"
-        android:text="@string/prochainesSeances"
+        android:text="@string/nextShowings"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
     <TextView
-        android:id="@+id/seances"
+        android:id="@+id/showings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/large"
-        android:text="@string/defaultSeances"
+        android:text="@string/defaultShowings"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
 

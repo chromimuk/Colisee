@@ -1,10 +1,8 @@
 package fr.marconnet.colisee.tools;
 
-import android.content.res.Resources;
 import java.util.List;
 
-import fr.marconnet.acp.models.Seance;
-import fr.marconnet.colisee.R;
+import fr.marconnet.acp.models.Showing;
 
 
 public class FormattingTools {
@@ -13,23 +11,23 @@ public class FormattingTools {
         return FormattingTools.beautifulList(acteurs, "Avec ");
     }
 
-    public static String formatRealisateurs(List<String> realisateurs) {
+    public static String formatDirectors(List<String> directors) {
 
         // TODO: not great
         String pretext = "";
-        if (!realisateurs.isEmpty() && realisateurs.get(0).length() > 0) {
+        if (!directors.isEmpty() && directors.get(0).length() > 0) {
 
-            char[] voyelles = {'A', 'E', 'I', 'O', 'U', 'Y', 'H'};
-            char firstLetter = realisateurs.get(0).charAt(0);
+            char[] vowels = {'A', 'E', 'I', 'O', 'U', 'Y', 'H'};
+            char firstLetter = directors.get(0).charAt(0);
 
-            if (new String(voyelles).indexOf(firstLetter) > -1) {
+            if (new String(vowels).indexOf(firstLetter) > -1) {
                 pretext = "Film d'";
             } else {
                 pretext = "Film de ";
             }
         }
 
-        return FormattingTools.beautifulList(realisateurs, pretext);
+        return FormattingTools.beautifulList(directors, pretext);
     }
 
 
@@ -53,28 +51,28 @@ public class FormattingTools {
     }
 
 
-    public static String formatSeancesCards(List<Seance> seances) {
-        return (seances.isEmpty()) ? "Pas de séances prévues" :
-                seances.get(0).toString();
+    public static String formatShowingCards(List<Showing> showing) {
+        return (showing.isEmpty()) ? "Pas de séances prévues" :
+                showing.get(0).toString();
     }
 
-    public static String formatSeancesDetail(List<Seance> seances) {
+    public static String formatShowingDetails(List<Showing> showing) {
 
-        if (seances.isEmpty())
+        if (showing.isEmpty())
             return "Pas de séances prévues";
 
         int jourNb = -1;
         StringBuilder builder = new StringBuilder();
 
-        for (Seance s : seances) {
-            if (s.getJourNb() != jourNb) {
+        for (Showing s : showing) {
+            if (s.getDayNb() != jourNb) {
                 if (jourNb > -1)
                     builder.append("\n");
                 builder.append(s.getJourText()).append(" - ");
             }
 
             builder.append(s.toStringShort()).append("   ");
-            jourNb = s.getJourNb();
+            jourNb = s.getDayNb();
         }
 
         return builder.toString();

@@ -33,5 +33,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'org.jsoup:jsoup:1.8.3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile files('libs/fr.marconnet.allocine-parseur-24052016.jar')
+    compile files('libs/fr.marconnet.allocine-parseur-30062016.jar')
 }
